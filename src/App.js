@@ -1,19 +1,16 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
-import Sidebar from "./components/Sidebar"
+import React, { useState } from "react"
+import Heading from "./components/Heading"
 import "./index.css"
-import avatar from "./logo.svg"
-import Button from "./components/Button"
-import ModeToggler from "./ModeToggler"
-import Promo from "./components/Promo"
-import Child from "./components/Child"
-
-const date = new Date()
 
 function App() {
+  function handleClick() {
+    setWord("Drink")
+  }
+  const [word, setWord] = useState("Eat")
   return (
-    <div>
-      <Child message={date.toLocaleDateString()} />
+    <div className="App">
+      <Heading message={word + " a Little Lemon"} />
+      <button onClick={handleClick}> Click Here!</button>
     </div>
   )
 }
