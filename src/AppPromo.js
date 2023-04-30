@@ -6,14 +6,18 @@ import avatar from "./logo.svg"
 import Button from "./components/Button"
 import ModeToggler from "./ModeToggler"
 import Promo from "./components/Promo"
-import Child from "./components/Child"
 
-const date = new Date()
+const url = "/tickets"
+const reactPic = <img src={avatar} />
+
+function Logo() {
+  return reactPic
+}
 
 function App() {
   return (
     <div>
-      <Child message={date.toLocaleDateString()} />
+      <Promo />
     </div>
   )
 }
