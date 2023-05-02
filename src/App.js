@@ -1,16 +1,16 @@
-import React, { useState } from "react"
+import Counter from "./components/Counter"
 import Heading from "./components/Heading"
+import MealsList from "./components/MealsList"
 import "./index.css"
+import MealsProvider from "./providers/MealsProvider"
 
 function App() {
-  function handleClick() {
-    setWord("Drink")
-  }
-  const [word, setWord] = useState("Eat")
   return (
     <div className="App">
-      <Heading message={word + " a Little Lemon"} />
-      <button onClick={handleClick}> Click Here!</button>
+      <MealsProvider>
+        <MealsList />
+        <Counter />
+      </MealsProvider>
     </div>
   )
 }
