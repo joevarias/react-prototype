@@ -2,7 +2,9 @@ import { useMealsListContext } from "../providers/MealsProvider"
 
 function MealsList() {
   const { meals } = useMealsListContext()
-
+  const b = useMealsListContext()
+  console.log(b)
+  console.log(meals)
   return (
     <div>
       <h1>Meals List using Context API</h1>
