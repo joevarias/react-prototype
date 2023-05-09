@@ -4,19 +4,12 @@ export default function App() {
   const [resourceType, setResourceType] = useState("posts")
   const [items, setItems] = useState([])
 
-  const handleResize = () => {
-    console.log("resizedd")
-  }
-
   console.log("render")
-
   useEffect(() => {
     console.log("resourceType Changed!")
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => setItems(json))
   }, [resourceType])
 
   return (
